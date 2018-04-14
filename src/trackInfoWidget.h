@@ -18,6 +18,7 @@
 
 #include <QFrame>
 #include <QMap>
+#include <QUdpSocket>
 
 class QPropertyAnimation;
 class QGraphicsOpacityEffect;
@@ -36,6 +37,8 @@ private:
     QGraphicsOpacityEffect *m_effect;
     QPropertyAnimation *m_animation;
     QWidget *m_container;
+
+    void updateTimecode(qint64 elapsed_msec);
 
     bool event(QEvent *event);
     void enterEvent(QEvent *event);
@@ -57,4 +60,3 @@ private slots:
 };
 
 #endif
-
